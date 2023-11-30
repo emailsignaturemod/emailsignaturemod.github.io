@@ -2,16 +2,15 @@
 <html>      
 <head>      
     <title>Modulr - Email Signature Generator</title>  
-    <link rel="icon" href="https://lh3.googleusercontent.com/drive-viewer/AK7aPaBdcRaNCWCaHZGI9f5maRCQdDNMM2Hz2Tq1EhKUkHPBYzJD5Q925jJbe4AAk4mSgPt2LAv-yPmSeL5OTisUQBeubghbtA=s2560" type="image/x-icon"> 
+    <link rel="icon" href="https://lh3.googleusercontent.com/drive-viewer/AK7aPaCgZNkiRrSHeBrJ5lpDunh0jyydaJIFeTqFA-UOz3skDdDRLIuSV-J2LeOOSK2VaAK72rldkreJICsF1JxUCUO0kFapyw=s2560" type="image/x-icon"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">      
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>      
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">      
     <style>    
-        body {    
-            background-color: #f8f9fa;    
+        body {      
             font-family: 'Inter', sans-serif;    
             font-size: 12.5px;  
-            background: linear-gradient(135deg, #66b7ff, #2283fb, #0061c2);
+            background: linear-gradient(#006FF7, #4EAFFF, #8FD2F7);
             /*background: linear-gradient(135deg, #b8d8d8, #66b7b2, #3a6073); */
 	    min-height: 100vh;
         }   
@@ -20,7 +19,7 @@
         #logo{
           max-width: 10%; 
           position: absolute;
-           margin-left: 3px;
+        	margin-left: 3px;
         }
 
         .content {  
@@ -31,76 +30,74 @@
             margin-top: 15px;
         }  
 
-        form {    
-            width: 48%;    
-            padding: 50px;    
-        }    
+    
         input[type='text'] {        
-            padding: 10px;    
-            margin: 7px 0;    
-            border-radius: 5px;    
-            border: 1px solid #0061c2;    
+            padding: 10px;     
+            border-radius: 14px;    
+            border: 2px solid #006FF7;    
             font-family: 'Inter', sans-serif;    
             font-size: 15.5px;    
             justify-content: center;
-            background-color: whitesmoke
-        }    
+            background-color: #f7f8fa
+        } 
+
         button {    
-            background-color: #000000;    
+            background-color: black;    
             color: white;    
             padding: 10px 20px;
-            margin-top: 5px;  
-            margin-right: 20px;  
-            border: none;    
-            border-radius: 7px;    
+			border: 1px solid black;
+            margin-top: 5px;     
+            border-radius: 14px;    
             cursor: pointer;    
             font-family: 'Inter', sans-serif;    
             font-size: 15.5px;
-            margin-bottom: 20px;
+            margin-bottom: 35px;
             
         }    
         button:hover {    
-            background-color: #049f37;    
+            background-color: #006FF7;    
         }   
         
         
         #start{   
-            padding: 15px;  
-            border-radius: 10px;
+            padding: 20px;  
+            border-radius: 14px;
             justify-content: center;
             text-align: center;
             font-family: 'Inter', sans-serif;    
             font-size: 16.5px;
             color: white;
+			margin-top: 10px;
         }
 
         #signatureborder {  
             width: fit-content;  
             margin: 20px;    
             padding: 20px;    
-            border: 2px solid #000;    
-            border-radius: 7px;      
+            border: 2px solid #006FF7;    
+            border-radius: 14px;      
             background-color: white; 
-         }    
+         } 
+
         table {    
-            width: 100%;    
+            width: 100%;  
         }
 
         #instructions {
-            width: 70%;
-            text-align: left;  
-            background-color: #66b7ff;  
+			margin-top: 20px;
+            width: 75%;
             padding: 15px;  
-            border-radius: 10px;
-            border: 1px solid #0061c2;
+            border-radius: 14px;
             font-family: 'Inter', sans-serif;    
             font-size: 18.5px;
-            color: white;
+            color: black;
             margin-bottom: 20px;
-        }  
-        #instructions ol {  
-            text-align: left;  
-        }  
+			background:  linear-gradient(#FFAC27, #FFD524);         }
+		
+		ul {
+  list-style: none;
+  
+}
 
 <!--
  /* Font Definitions */
@@ -1404,15 +1401,14 @@ ul
             <button onclick="copySignature()">Copy Email Signature to Clipboard</button>  
         </div>  
     <div id="instructions">  
-            <p>To add the signature you've copied as your default signature in Outlook, follow these steps:</p>  
-            <ol>  
-                <li>Open Outlook and select 'New Email'</li>  
-                <li>In the ribbon menu, click 'Insert' then 'Signature > Signatures...'</li>  
-                <li>Choose 'New' and type a name for the signature</li>  
-                <li>Paste the copied signature into the box using Ctrl+V. Important: Make sure you keep source formatting when pasting</li>  
-                <li>Set this new signature as your default for New Messages under the “Choose default signature”</li>
-                <li>Click 'Save' to save changes.</li></ol></br> 
-            </ol>  
+        <p style="justify-content: center;display: flex;flex-direction: column;align-items: center;">To add the signature you've copied as your default signature in Outlook, follow these steps:</p>
+		<div style="justify-content: center;display: flex;flex-direction: column;align-items: center;"><ul>  
+                <li>1. Open Outlook and select 'New Email'</li>  
+                <li>2. In the ribbon menu, click 'Insert' then 'Signature > Signatures...'</li>  
+                <li>3. Choose 'New' and type a name for the signature</li>  
+                <li>4. Paste the copied signature into the box using Ctrl+V. Important: Make sure you keep source formatting when pasting</li>  
+                <li>5. Set this new signature as your default for New Messages under the “Choose default signature”</li>
+                <li>6. Click 'Save' to save changes.</li></ul></div></br> 
         </div>  
     </div> 
 
