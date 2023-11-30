@@ -1,6 +1,8 @@
 <!DOCTYPE html>      
 <html>      
 <head>      
+    <title>Modulr - Email Signature Generator</title>  
+    <link rel="icon" href="https://lh3.googleusercontent.com/drive-viewer/AK7aPaBdcRaNCWCaHZGI9f5maRCQdDNMM2Hz2Tq1EhKUkHPBYzJD5Q925jJbe4AAk4mSgPt2LAv-yPmSeL5OTisUQBeubghbtA=s2560" type="image/x-icon"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">      
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>      
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">      
@@ -8,54 +10,77 @@
         body {    
             background-color: #f8f9fa;    
             font-family: 'Inter', sans-serif;    
-            font-size: 12.5px;    
-        }    
+            font-size: 12.5px;  
+            background: linear-gradient(135deg, #66b7ff, #2283fb, #0061c2);
+            /*background: linear-gradient(135deg, #b8d8d8, #66b7b2, #3a6073); */
+        }   
+
+
+        #logo{
+          max-width: 12%; 
+          position: absolute;
+           margin-left: 3px;
+        }
+
         .content {  
             display: flex;  
             flex-direction: column;  
             align-items: center;  
             justify-content: center;  
+            margin-top: 10px;
         }  
 
         form {    
             width: 48%;    
-            padding: 20px;    
+            padding: 50px;    
         }    
-        input[type='text'] {    
-            width: 100%;    
+        input[type='text'] {        
             padding: 10px;    
-            margin: 10px 0;    
+            margin: 7px 0;    
             border-radius: 5px;    
-            border: 1px solid #ccc;    
+            border: 1px solid #0061c2;    
             font-family: 'Inter', sans-serif;    
             font-size: 15.5px;    
-            justify-content: center
+            justify-content: center;
+            background-color: whitesmoke
         }    
         button {    
-            background-color: #007BFF;    
+            background-color: #000000;    
             color: white;    
             padding: 10px 20px;
             margin-top: 5px;  
             margin-right: 20px;  
             border: none;    
-            border-radius: 5px;    
+            border-radius: 7px;    
             cursor: pointer;    
             font-family: 'Inter', sans-serif;    
-            font-size: 12.5px;
-            margin-bottom: 20px;  
+            font-size: 15.5px;
+            margin-bottom: 20px;
+            
         }    
         button:hover {    
-            background-color: #000000;    
-        }    
+            background-color: #049f37;    
+        }   
+        
+        
+        #start{   
+            padding: 15px;  
+            border-radius: 10px;
+            justify-content: center;
+            text-align: center;
+            font-family: 'Inter', sans-serif;    
+            font-size: 16.5px;
+            color: white;
+        }
+
         #signatureborder {  
             width: fit-content;  
             margin: 20px;    
             padding: 20px;    
-            border: 1px solid #000;    
-            border-radius: 5px;      
-            background-color: #fff; 
-            justify-content: center      
-        }    
+            border: 3px solid #000;    
+            border-radius: 7px;      
+            background-color: white; 
+         }    
         table {    
             width: 100%;    
         }
@@ -63,10 +88,14 @@
         #instructions {
             width: 70%;
             text-align: left;  
-            background-color: #e0e0e0;  
+            background-color: #66b7ff;  
             padding: 15px;  
             border-radius: 10px;
-            justify-content: center;
+            border: 1px solid #0061c2;
+            font-family: 'Inter', sans-serif;    
+            font-size: 18.5px;
+            color: white;
+            margin-bottom: 20px;
         }  
         #instructions ol {  
             text-align: left;  
@@ -1344,40 +1373,47 @@ ul
     </style>    
 </head>         
 <body onload="generateSignature()">  
-    <div class="topnav">  
-        <a></a>  
-    </div>  
-    <div class="content">  
-        <div class="input">  
-            <div>  
-                Full Name: <input type="text" id="name" onkeyup="generateSignature()">  
-                Position: <input type="text" id="position" onkeyup="generateSignature()">  
-            </div>    
-            <div>  
-                Pronouns: <input type="text" id="pronouns" onkeyup="generateSignature()">  
-            </div>  
-            <div>  
-                Telephone: <input type="text" id="telephone" onkeyup="generateSignature()">  
-            </div>  
-        </div>  
-        <div id="signatureborder">  
+    <div>  
+        <img id=logo src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaD3K2bX3sP1UhEZoTzxsYzLUapQuaxgQ1H5bMCCLjnlGa6bhKUZw72otLy-oFbjaspklFZIYrnCrPwrr9-zWblP3khJ1w=s2560">  
+    </div> 
+    <div class="content">
+        <div = id="start">
+        <p>Fill in the text boxes with your details to populate the email signature template below:</p>
+        <div class="input">
+            <table>
+                <div>
+                <tr>
+                    <td><input type="text" autocomplete="on" spellcheck="true" placeholder="Your Full Name": id="name" onkeyup="generateSignature()"> </td>
+                    <td><input type="text" autocomplete="on" spellcheck="true" placeholder="Your Job Title": id="position" onkeyup="generateSignature()">  </td>
+                </tr> </div>
+                <div><tr>
+                    <td><input type="text" placeholder="Pronouns [Optional]" id="pronouns" onkeyup="generateSignature()"></td>
+                    <td><input type="text" placeholder="Phone Number(s) [Optional]" id="telephone" onkeyup="generateSignature()"> </td>
+                </tr></div>
+            
+
+
+        </table>  
+        </div> 
+    </div> 
+        <div id="signatureborder" lable="Your Email">  
             <div id="signature"></div>  
         </div>  
         <div>  
             <button onclick="copySignature()">Copy Email Signature to Clipboard</button>  
         </div>  
     <div id="instructions">  
-            <p>To add this signature in Outlook desktop app, follow these steps:</p>  
+            <p>To add the signature you've copied as your default signature in Outlook, follow these steps:</p>  
             <ol>  
                 <li>Open Outlook and select 'New Email'</li>  
-                <li>On the Message menu, select 'Signature > Signatures'</li>  
-                <li>Under Select signature to edit, choose 'New', and in the New Signature dialog box, type a name for the signature.</li>  
-                <li>Under Edit signature, paste the copied signature.</li>  
-                <li>Choose 'OK' to save changes.</li>  
+                <li>In the ribbon menu, click 'Insert' then 'Signature > Signatures...'</li>  
+                <li>Choose 'New', and type a name for the signature.</li>  
+                <li>Paste in the copied signature into the box using Ctrl+V. Important: Make sure you keep source formatting when pasting</li>  
+                <li>Set this new signature as your defaut by choosing it for new messages and replies in the Set Default Signature options</li>
+                <li>Click 'Save' to save changes.</li></ol></br> 
             </ol>  
         </div>  
     </div> 
-</div>
 
 <script>        
 function generateSignature() {    
@@ -1386,29 +1422,28 @@ function generateSignature() {
     var position = document.getElementById('position').value;    
     var telephone = document.getElementById('telephone').value;    
     
-    var signature = `<div class="WordSection1">
-
-<p class="MsoBodyText"><b><span style="font-size:8.0pt;line-height:150%;
-font-family:&quot;Inter&quot;,sans-serif"><o:p>&nbsp;</o:p></span></b></p>
-
-<table class="MsoTableGrid" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none;mso-yfti-tbllook:1184;mso-padding-alt:
- 5.65pt 0cm 0cm 0cm;mso-border-insidev:none">
- <tbody><tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes;height:68.85pt">
-  <td width="198" valign="top" style="width:148.85pt;border:none;border-bottom:
-  solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext .5pt;
-  padding:5.65pt 0cm 0cm 0cm;height:68.85pt">
-  <p class="MsoBodyText"><b><span style="font-size:8.0pt;line-height:150%;
-  font-family:&quot;Inter&quot;,sans-serif">${name}<br>
-  </span></b><span style="font-size:8.0pt;line-height:150%;font-family:&quot;Inter&quot;,sans-serif">${pronouns}<b><br>
-  ${position}<o:p></o:p></b></span></p>
-  </td>
-  <td width="444" valign="top" style="width:333.05pt;border:none;border-bottom:
-  solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext .5pt;
-  padding:5.65pt 0cm 0cm 0cm;height:68.85pt">
-  <p class="MsoBodyText" style="line-height:normal"><span style="font-size:8.0pt;
-  font-family:&quot;Inter&quot;,sans-serif">${telephone}</span></p>
-  <p class="MsoBodyText" style="line-height:normal"><b><span style="font-size:
-  8.0pt;font-family:&quot;Inter&quot;,sans-serif">ModulrFinance.com</span></b><i><span style="font-size:8.0pt;font-family:&quot;Inter&quot;,sans-serif"><o:p></o:p></span></i></p>
+    var signature = `<div class="WordSection1">  
+    <table class="MsoTableGrid" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none;mso-yfti-tbllook:1184;mso-padding-alt:5.65pt 0cm 0cm 0cm;mso-border-insidev:none">  
+        <tbody>  
+            <tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes;height:68.85pt">  
+                <td width="198" valign="top" style="width:148.85pt;border:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext .5pt;padding:5.65pt 0cm 0cm 0cm;height:68.85pt">  
+                    <p class="MsoBodyText">  
+                        <b>  
+                            <span style="font-size:8.0pt;line-height:150%;font-family:&quot;Inter&quot;,sans-serif">${name}</span>  
+                        </b>  
+                
+                        <span style="font-size:8.0pt;line-height:150%;font-family:&quot;Inter&quot;,sans-serif">${pronouns}<b><br>${position}<o:p></o:p></b></span>  
+                    </p> 
+                </td>  
+                <td width="444" valign="top" style="width:333.05pt;border:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext .5pt;padding:5.65pt 0cm 0cm 0cm;height:68.85pt">  
+                    <p class="MsoBodyText">  
+                         
+                            <span style="font-size:8.0pt;line-height:150%;font-family:&quot;Inter&quot;,sans-serif">${telephone}</span><br>  
+                      
+                        <b>  
+                            <span style="font-size:8.0pt;font-family:&quot;Inter&quot;,sans-serif"><a href="http://www.modulrfinance.com/" style="color:black;text-decoration:none">modulrfinance.com</a></span>  
+                        </b>  
+                    </p>  
   <p class="MsoBodyText" style="line-height:normal"><a href="https://www.linkedin.com/company/modulr-finance/"><span style="font-size:8.0pt;color:black;mso-themecolor:text1;mso-no-proof:yes;
   text-decoration:none;text-underline:none"><!--[if gte vml 1]><v:shapetype
    id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
@@ -1431,24 +1466,20 @@ font-family:&quot;Inter&quot;,sans-serif"><o:p>&nbsp;</o:p></span></b></p>
    <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
    <o:lock v:ext="edit" aspectratio="t"/>
   </v:shapetype><v:shape id="Picture_x0020_642518544" o:spid="_x0000_i1028"
-   type="#_x0000_t75" alt="A black and white logo&#10;&#10;Description automatically generated"
+   type="#_x0000_t75" alt="LinkedIn Logo"
    href="https://www.linkedin.com/company/modulr-finance/" style='width:16.5pt;
    height:16.5pt;visibility:visible;mso-wrap-style:square' o:button="t">
    <v:fill o:detectmouseclick="t"/>
-   <v:imagedata src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaA3FH1b0Z_mEahjFM5SdNMV6JxF5rxbi08VjrX_5klv1XCYejiclXYMG9QX7A8KEBk-WJOGAR_vYC848mcYL8cwUAN-=s2560" o:title="A black and white logo&#10;&#10;Description automatically generated"/>
-  </v:shape><![endif]--><!--[if !vml]--><span style="mso-ignore:vglayout"><img border="0" width="22" height="22" src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaAQBi4qtVoR8grVvLOBDktTLzfZ7FFU6Ve91FXuadGbo78OaH-aNJPIQ7ktYjaZqjrVLe5errKZ0W0tfChrubQDIXoRPg=s2560" alt="A black and white logo
-
-Description automatically generated" v:shapes="Picture_x0020_642518544"></span><!--[endif]--></span></a><i><span style="font-size:8.0pt;font-family:&quot;Inter&quot;,sans-serif"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span></span></i><a href="https://twitter.com/ModulrFinance"><span style="font-size:8.0pt;
+   <v:imagedata src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaAd5kX0aOaKgFgRA5oVlQ3mUA2LRqwkAMG2xn_VNj0NESxV5xO5aPwrI6-VNEm9kpVEPPGrrWIl6Jmp5BOabsbtqx2H8Q=s2560" o:title="LinkedIn Logo"/>
+  </v:shape><![endif]--><!--[if !vml]--><span style="mso-ignore:vglayout"><img border="0" width="22" height="22" src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaAd5kX0aOaKgFgRA5oVlQ3mUA2LRqwkAMG2xn_VNj0NESxV5xO5aPwrI6-VNEm9kpVEPPGrrWIl6Jmp5BOabsbtqx2H8Q=s2560" alt="LinkedIn Logo" v:shapes="Picture_x0020_642518544"></span><!--[endif]--></span></a><i><span style="font-size:8.0pt;font-family:&quot;Inter&quot;,sans-serif"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span></span></i><a href="https://twitter.com/ModulrFinance"><span style="font-size:8.0pt;
   color:black;mso-themecolor:text1;mso-no-proof:yes;text-decoration:none;
   text-underline:none"><!--[if gte vml 1]><v:shape id="Picture_x0020_416870151"
-   o:spid="_x0000_i1027" type="#_x0000_t75" alt="A white x on a black background&#10;&#10;Description automatically generated"
+   o:spid="_x0000_i1027" type="#_x0000_t75" alt="Twitter/X Logo"
    href="https://twitter.com/ModulrFinance" style='width:16.5pt;height:16.5pt;
    visibility:visible;mso-wrap-style:square' o:button="t">
    <v:fill o:detectmouseclick="t"/>
-   <v:imagedata src="Email_Signature_v1%20(1)_files/image003.png" o:title="A white x on a black background&#10;&#10;Description automatically generated"/>
-  </v:shape><![endif]--><!--[if !vml]--><span style="mso-ignore:vglayout"><img border="0" width="22" height="22" src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaC140TuP1A7Uf-7aBOroOQlPMygMq3W8kGRj-dPj_zs8PXvsGnJvZZCuiFKvUSKwYOlsJqmHijyNTIJMxqZLAJWemQc=s2560" alt="A white x on a black background
-
-Description automatically generated" v:shapes="Picture_x0020_416870151"></span><!--[endif]--></span></a><i><span style="font-size:8.0pt;font-family:&quot;Inter&quot;,sans-serif"><o:p></o:p></span></i></p>
+   <v:imagedata src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaCOYuyfIBHeM5RsVc-SS1T66mYrBymIS7AFITPNU55DunRTlL7Fx6PHRQjv6UFdOsM3Pk2_i2aAhEPy63p0_7g7p3J_KA=s2560" o:title="Twitter/X Logo"/>
+  </v:shape><![endif]--><!--[if !vml]--><span style="mso-ignore:vglayout"><img border="0" width="22" height="22" src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaCOYuyfIBHeM5RsVc-SS1T66mYrBymIS7AFITPNU55DunRTlL7Fx6PHRQjv6UFdOsM3Pk2_i2aAhEPy63p0_7g7p3J_KA=s2560" alt="Twitter/X Logo" v:shapes="Picture_x0020_416870151"></span><!--[endif]--></span></a><i><span style="font-size:8.0pt;font-family:&quot;Inter&quot;,sans-serif"><o:p></o:p></span></i></p>
   </td>
  </tr>
  <tr style="mso-yfti-irow:1;height:54.45pt">
@@ -1456,16 +1487,13 @@ Description automatically generated" v:shapes="Picture_x0020_416870151"></span><
   solid windowtext .5pt;padding:5.65pt 0cm 0cm 0cm;height:54.45pt">
   <p class="MsoBodyText"><a href="http://www.modulrfinance.com/"><span style="color:black;mso-themecolor:text1;mso-no-proof:yes;text-decoration:
   none;text-underline:none"><!--[if gte vml 1]><v:shape id="_x0000_i1026"
-   type="#_x0000_t75" alt="A black and white logo&#10;&#10;Description automatically generated"
+   type="#_x0000_t75" alt="ModulrFinance Logo"
    href="http://www.modulrfinance.com/" style='width:91pt;height:30pt;
    visibility:visible;mso-wrap-style:square' o:button="t">
    <v:fill o:detectmouseclick="t"/>
-   <v:imagedata src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaA3FH1b0Z_mEahjFM5SdNMV6JxF5rxbi08VjrX_5klv1XCYejiclXYMG9QX7A8KEBk-WJOGAR_vYC848mcYL8cwUAN-=s2560" o:title="A black and white logo&#10;&#10;Description automatically generated"/>
-  </v:shape><![endif]--><!--[if !vml]--><span style="mso-ignore:vglayout"><img border="0" width="121" height="40" src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaCNDWhzZvBfZCVu-QPaiPBB6S_etHhBqSxtn4p1u_u_2ovnBhunqavS8yblb41qKFPpyzvtmSpQ8U8DfhvhbpnWLAFsdA=s2560" alt="A black and white logo
-
-Description automatically generated" v:shapes="_x0000_i1026"></span><!--[endif]--></span></a><b><span style="font-size:8.0pt;line-height:150%;font-family:&quot;Inter&quot;,sans-serif"><o:p></o:p></span></b></p>
-  <p class="MsoBodyText"><b><span style="font-family:&quot;Inter&quot;,sans-serif">Payments
-  Unleashed<o:p></o:p></span></b></p>
+   <v:imagedata src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaD3K2bX3sP1UhEZoTzxsYzLUapQuaxgQ1H5bMCCLjnlGa6bhKUZw72otLy-oFbjaspklFZIYrnCrPwrr9-zWblP3khJ1w=s2560" o:title="ModulrFinance Logo"/>
+  </v:shape><![endif]--><!--[if !vml]--><span style="mso-ignore:vglayout"><img border="0" width="121" height="40" src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaD3K2bX3sP1UhEZoTzxsYzLUapQuaxgQ1H5bMCCLjnlGa6bhKUZw72otLy-oFbjaspklFZIYrnCrPwrr9-zWblP3khJ1w=s2560" alt="ModulrFinance Logo" v:shapes="_x0000_i1026"></span><!--[endif]--></span></a><b><span style="font-size:8.0pt;line-height:150%;font-family:&quot;Inter&quot;,sans-serif"><o:p></o:p></span></b></p>
+  <p class="MsoBodyText"><b><span style="font-family:&quot;Inter&quot;,sans-serif">Payments Unleashed<o:p></o:p></span></b></p>
   </td>
   <td width="444" valign="top" style="width:333.05pt;border:none;mso-border-top-alt:
   solid windowtext .5pt;padding:5.65pt 0cm 0cm 0cm;height:54.45pt">
@@ -1483,8 +1511,8 @@ Description automatically generated" v:shapes="_x0000_i1026"></span><!--[endif]-
   mso-no-proof:yes"><!--[if gte vml 1]><v:shape id="Picture_x0020_1" o:spid="_x0000_i1025"
    type="#_x0000_t75" style='width:481.5pt;height:45pt;visibility:visible;
    mso-wrap-style:square'>
-   <v:imagedata src="Email_Signature_v1%20(1)_files/image007.png" o:title=""/>
-  </v:shape><![endif]--><!--[if !vml]--><img border="0" width="642" height="60" src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaCDFr5y_3oc9DvG5iK-ramykp28QXkZBKOEWl3cPy43BJIysu3yzOqUOM7p2xDd0EntxstZCgDwUaCL4NhWuVzUaXPxvA=s1600" v:shapes="Picture_x0020_1"><!--[endif]--></span><b><span style="font-size:8.0pt;line-height:150%;font-family:&quot;Inter&quot;,sans-serif"><o:p></o:p></span></b></p>
+   <v:imagedata src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaAWSiF7RoNG_0BeB5fRmav4a6oRUKT_6tsJEf4ByNnu8wptQjZdIU7o_A5hj22pfwBbw4c1Rn1LPOsPjUd_xhYEqWyy=s1600" o:title="email banner"/>
+  </v:shape><![endif]--><!--[if !vml]--><img border="0" width="642" height="60" src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaAWSiF7RoNG_0BeB5fRmav4a6oRUKT_6tsJEf4ByNnu8wptQjZdIU7o_A5hj22pfwBbw4c1Rn1LPOsPjUd_xhYEqWyy=s1600" v:shapes="Picture_x0020_1"><!--[endif]--></span><b><span style="font-size:8.0pt;line-height:150%;font-family:&quot;Inter&quot;,sans-serif"><o:p></o:p></span></b></p>
   </td>
  </tr>
 </tbody></table>
@@ -1505,10 +1533,13 @@ function copySignature() {
     window.getSelection().addRange(range);     
     document.execCommand('copy');    
     window.getSelection().removeAllRanges();
+
+    window.scrollTo(0, document.body.scrollHeight);
+
     
-  // Alert to the user  
-  alert("Signature copied to clipboard!");  
-  
+  /*// Alert to the user  
+  alert("Signature copied to clipboard!  Follow the steps at the bottom of the page to add it as your deafult in Outlook");  
+  */
   // Or change the button text  
   document.querySelector('button').textContent = "Copied!"; 
 }
